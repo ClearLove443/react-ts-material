@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+.box {
+  background-color: #004885;
+  width: 100vw;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  width: 100vw;
+  /* height: 55px; */
+  color: #fff;
+  font-size: 27px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container-table {
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+}
+
+table thead {
+  background-color: #1a76c4;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+}
+
+table th {
+  text-align: center !important;
+}
+
+table td {
+  text-align: left !important;
+}
