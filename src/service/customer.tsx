@@ -1,5 +1,5 @@
 const selectCustomer = async (inputValue, selectVal, setData) => {
-  const url = new URL("/api/data", "http://127.0.0.1:5173");
+  const url = new URL("/remote/api/data", window.location.origin);
   url.searchParams.set("start", `${inputValue}`);
   url.searchParams.set("size", `10`);
   url.searchParams.set("filters", JSON.stringify([]));
@@ -11,15 +11,16 @@ const selectCustomer = async (inputValue, selectVal, setData) => {
   });
 
   try {
-    const response = await fetch("http://127.0.0.1:13000/submit", {
-      method: "POST", // 或者 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: raw, // 将JavaScript对象转换为JSON字符串
-    });
+    // const response = await fetch("/api/submit", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: raw,
+    // });
+    const response = await fetch(url);
     const json = await response.json();
-    setData(json);
+    setData(json.data);
   } catch (error) {
     console.error(error);
     return;

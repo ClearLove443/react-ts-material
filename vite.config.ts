@@ -7,20 +7,16 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://www.material-react-table.com",
+        target: "http://127.0.0.1:13000",
         changeOrigin: true,
         secure: false,
-        // rewrite: (path) => path.replace(/^\/api2/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
-    },
-  },
-  preview: {
-    proxy: {
-      "/api2": {
+      "/remote": {
         target: "https://www.material-react-table.com",
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api2/, ""),
+        rewrite: (path) => path.replace(/^\/remote/, ""),
       },
     },
   },

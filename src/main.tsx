@@ -7,6 +7,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <StyledEngineProvider injectFirst>
       <CustomerPage />
+      {/* <Demo /> */}
     </StyledEngineProvider>
   </StrictMode>
 );
